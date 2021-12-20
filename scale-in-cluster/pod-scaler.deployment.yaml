@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-scaler-deployment
+  labels:
+    app: pod-scaler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pod-scaler
+  template:
+    metadata:
+      labels:
+        app: pod-scaler
+    spec:
+      containers:
+        - name: pod-scaler
+          image: mmertdogann/kubernetes-pod-scaler:1.0
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "10m"
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pod-scaler-service
+  labels:
+    app: pod-scaler
+spec:
+  selector:
+    app: pod-scaler
+  ports:
+    - protocol: TCP
+      name: http
+      port: 8080
+      targetPort: 3000
