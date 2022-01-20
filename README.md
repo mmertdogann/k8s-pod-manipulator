@@ -25,5 +25,5 @@ The project has been created using these technologies:
 
 ## Running The App
 
-- <a href="./in-cluster">In cluster </a> 
-- <a href="./out-of-cluster">Out of cluster </a> 
+- <a href="./scale-in-cluster">In cluster </a> 
+- <a href="./scale-out-of-cluster">Out of cluster </a> 
