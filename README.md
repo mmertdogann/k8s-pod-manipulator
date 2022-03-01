@@ -2,8 +2,6 @@
 
 A simple pod scaler golang application that can scale replicas via manipulating the deployment
 
-<br>
-
 ## Technologies
 
 The project has been created using these technologies:
@@ -12,8 +10,6 @@ The project has been created using these technologies:
 * **Kubernetes** as container-orchestration system
 * **kubectl** as command-line tool to interact kubernetes
 * **client-go** for talking to a kubernetes cluster.
-
-<br>
 
 ## Setup & Installtion
 
